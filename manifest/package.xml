@@ -27,8 +27,6 @@
 	</types>
 	<types>
 		<members>codeCoverageInspector</members>
-		<members>illustration</members>
-		<members>sldsSvg</members>
 		<name>LightningComponentBundle</name>
 	</types>
 	<types>
