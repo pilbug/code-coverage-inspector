@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalClientApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>add.your.email.here@example.com</contactEmail>
+    <distributionState>Local</distributionState>
+    <isProtected>false</isProtected>
+    <label>Tooling API</label>
+    <orgScopedExternalApp>00DYOURORGID:ToolingAPI</orgScopedExternalApp>
+</ExternalClientApplication>

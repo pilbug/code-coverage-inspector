@@ -1,0 +1,3 @@
+.success {
+    --slds-g-color-accent-container-1: var(--slds-g-color-success-1, #056764);
+}

@@ -1,0 +1,48 @@
+<template>
+    <lightning-layout align-items="spread" class="slds-size_full" pull-to-boundary="medium">
+        <lightning-layout-item size=8 padding="horizontal-medium">
+            <lightning-datatable
+                key-field="id"
+                max-row-selection=1
+                resize-column-disabled 
+                single-row-selection-mode 
+                sorted-by={sortedBy} 
+                sorted-direction={sortedDirection}
+                data={data}
+                columns={columns}
+                onrowselection={selectionHandler}
+                onsort={sortHandler}
+            ></lightning-datatable>
+        </lightning-layout-item>
+        <lightning-layout-item size=4 padding="horizontal-medium">
+            <lightning-card lwc:if={showDetails} title={detailsCardTitle}>
+                <lightning-progress-bar lwc:ref="progbar" value={selectedRow.coverage}></lightning-progress-bar>
+                <div class="slds-p-around_medium">
+                    <h3 class="slds-text-heading_small">Covered Lines</h3>
+                    <p>{selectedRowCoveredLines}</p>
+                    <h3 class="slds-text-heading_small slds-var-m-top_small">Uncovered Lines</h3>
+                    <p>{selectedRowUncoveredLines}</p>
+                </div>
+                <div slot="footer">
+                    <lightning-button 
+                        label="Open" 
+                        variant="brand" 
+                        icon-name="utility:new_window" 
+                        icon-position="right" 
+                        onclick={openClass} 
+                    ></lightning-button>
+                </div>
+            </lightning-card>
+            <div lwc:else>
+                <lightning-card title="Code Coverage Details">
+                    <div class="slds-p-around_medium">
+                        <c-illustration 
+                            illustration="openRoad" 
+                            heading="Select a row to see coverage details"
+                        ></c-illustration>
+                    </div>
+                </lightning-card>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>
